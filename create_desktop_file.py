@@ -51,7 +51,7 @@ def create_desktop_file_content() -> str:
 
     is_term = str(ask("Show the console?", ["y", "n"]) == "y").lower()
     name = ask("Name?")
-    path = ask("Path?")
+    path = os.path.expanduser(ask("Path?"))
     icon = ask("Icon?")
 
     return f"""#!/usr/bin/env xdg-open
